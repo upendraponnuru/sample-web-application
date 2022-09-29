@@ -11,16 +11,7 @@ pipeline{
                 }
             }
         
-        stages{
-
-              stage('maven build'){
-                  steps{
-                      script{
-		    	                sh "mvn clean install"
-                      	  }
-               	     }  
-                 }	
-                 
+        stages{  
                  stage ('Check logs') {
                     steps {
                         filterLogs ('WARNING', 50)
